@@ -11,7 +11,9 @@ export class GuestbookController {
   }
 
   @Post()
-  async create(@Body() body: { name: string; message: string }): Promise<GuestbookEntry> {
+  async create(
+    @Body() body: { name: string; message: string },
+  ): Promise<GuestbookEntry> {
     return this.service.addEntry(body);
   }
 }

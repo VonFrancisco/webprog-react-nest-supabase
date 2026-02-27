@@ -8,4 +8,7 @@ async function bootstrap() {
   });
   await app.listen(process.env.PORT ?? 3000);
 }
-bootstrap();
+
+// we deliberately don't await the outer call, but eslint complains about a
+// floating promise, so use `void` to acknowledge it.
+void bootstrap();
